@@ -1,0 +1,10 @@
+
+var queryString = 'category=inquiry^active=true'
+var incidentGR = new GlideRecord('incident');
+incidentGR.addEncodedQuery(queryString);
+incidentGR.query();
+while(incidentGR.next()) {
+  
+  gs.info(incidentGR.number);
+  
+}
