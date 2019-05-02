@@ -1,0 +1,5 @@
+/*The following was run using CTL+Shift+J which brought up JavaScript Executor*/
+
+var isNewRecord = g_form.isNewRecord();
+
+alert('Is this a new record? ' + isNewRecord );
