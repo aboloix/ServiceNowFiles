@@ -5,3 +5,5 @@ var isNewRecord = g_form.isNewRecord();
 alert('Is this a new record? ' + isNewRecord );
 
 g_form.addErrorMessage('Help!!!');
+
+g_form.clearMessages();
