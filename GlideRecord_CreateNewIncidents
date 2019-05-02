@@ -1,0 +1,14 @@
+var newIncidents = [];
+var counter = 1;
+
+var incidentGR = new GlideRecord("incident");
+
+while(counter < 3) {
+  incidentGR.newRecord();
+  incidentGR.short_description = 'Incident created 5/2/2019, # ' + counter;
+  counter++;
+  newIncidents.push(incidentGR.insert());
+
+}
+
+gs.info(newIncidents);
