@@ -9,3 +9,6 @@ g_form.addErrorMessage('Help!!!');
 g_form.clearMessages();
 
 alert(g_form.getLabelOf('category'));
+
+var tableName = g_form.getTableName();
+alert('Table: ' + tableName);
