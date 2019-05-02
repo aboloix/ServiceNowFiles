@@ -7,3 +7,5 @@ alert('Is this a new record? ' + isNewRecord );
 g_form.addErrorMessage('Help!!!');
 
 g_form.clearMessages();
+
+alert(g_form.getLabelOf('category'));
