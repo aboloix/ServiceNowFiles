@@ -1,0 +1,26 @@
+/* This needs to be called from client, like from an incident->click on the hamburger, configure, Client Scripts*/
+/* Server side */
+
+var ServiceNow201GlideAjax = Class.create();
+ServiceNow201GlideAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	sayHello: function(){
+		return 'Hello from inside the ScriptInclude!!';
+	},
+	
+    type: 'ServiceNow201GlideAjax'
+});
+
+/* Client side */
+/* Type OnLoad, UI Type Desktop */
+function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var ga = new GlideAjax('ServiceNow201GlideAjax');
+   ga.addParam('sysparm_name', 'sayHello');
+   ga.getXML(ajaxProcessor);
+}
+
+function ajaxProcessor(response) {
+	var answer = response.responseXML.documentElement.getAttribute('answer');
+	g_form.setValue('short_description', answer);
+}
