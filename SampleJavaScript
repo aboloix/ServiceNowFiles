@@ -1,0 +1,20 @@
+var currentHour = 1;
+
+var gs = {};
+gs.getUserDisplayName = function() {
+  return 'Some person';
+}
+
+var greetingsMessage = '';
+
+if(currentHour >= 3 && currentHour < 11) {
+  greetingsMessage = 'Good morning ';
+} else if(currentHour >= 11 && currentHour < 17) {
+  greetingsMessage = 'Good afternoon ';
+} else {
+  greetingsMessage = 'Good evening ';
+}
+
+greetingsMessage += gs.getUserDisplayName();
+
+console.log(greetingsMessage);
